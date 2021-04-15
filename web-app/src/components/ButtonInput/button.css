@@ -1,0 +1,65 @@
+.SignButton{
+    font-family: cursive;
+    font-style: italic;
+    float: right;
+    border: none;
+    background-color: white;
+    color: limegreen;
+    padding: 0% 2%;
+    border-radius: 10px;
+    font-size: x-large;
+}
+
+.SignButton:hover{
+    cursor: pointer;
+}
+
+.SignButton:disabled{
+    cursor: not-allowed;
+    color: red;
+}
+
+.SignButton:focus{
+    outline: none;
+}
+
+.KeyButton{
+    border-radius: 5px;
+    border: solid cornflowerblue;
+    color: cornflowerblue;
+    padding: 0.3rem;
+}
+
+.GenerateButton{
+    border-radius: 5px;
+    border: solid cornflowerblue;
+    color: cornflowerblue;
+    padding: 0.3rem;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Attendance{
+    border-radius: 5px;
+    border: solid cornflowerblue;
+    color: cornflowerblue;
+    padding: 0.3rem;
+}
+
+.KeyButton:hover,
+.KeyButton:focus,
+.GenerateButton:focus,
+.GenerateButton:hover,
+.Attendance:hover,
+.Attendance:focus{
+    outline: none;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+@media screen and (max-width: 430px) {
+    .Attendance{
+        margin: 3%;
+    }
+}

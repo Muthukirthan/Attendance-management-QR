@@ -1,0 +1,46 @@
+.GettingAttendane{
+    text-align: center;
+    color: cornflowerblue;
+    padding: 3%;
+}
+
+.InpFile{
+    border: 3px solid cornflowerblue;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0px 10px
+}
+
+.InpFile::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.ClassInfo{
+    color: cornflowerblue;
+    margin-left: 40%;
+}
+
+@media screen and (max-width: 700px) {
+    .ClassInfo{
+        margin-left: 20%;
+    }
+}
+
+.NoStudents{
+    color: cornflowerblue;
+    text-align: center;
+}
+
+.AttendanceTable{
+    color: cornflowerblue;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 7%;
+}
+
+.AttendanceTable td,th{
+    width: 30%;
+}

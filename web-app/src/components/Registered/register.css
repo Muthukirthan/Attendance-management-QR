@@ -1,0 +1,18 @@
+.RegisterMsg{
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 80%;
+    padding: 10% 0%;
+}
+
+.SuccessGif{
+    width: 150px;
+    padding: 10% 0%;
+}
+
+@media screen and (min-width: 650px) {
+    .RegisterMsg,
+    .SuccessGif{
+      padding: 3% 0%;
+    }
+  }

@@ -1,0 +1,22 @@
+.Generate{
+    color: cornflowerblue;
+    text-align: center;
+}
+
+.GenerateMsg{
+    text-align: center;
+}
+
+.GenerateTable{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.InpSelect{
+    border: 1.6px solid cornflowerblue;
+    width: 200px;
+}
+
+.InpSelect:focus{
+    outline: none;
+}

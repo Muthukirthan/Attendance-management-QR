@@ -1,0 +1,56 @@
+.SignUp{
+  width: 100%;
+}
+
+.Student{
+  height: 50px;
+  width: 55px;
+  float: right;
+}
+
+.SignCard{
+  border: 5px solid cornflowerblue;
+  margin: 8% 35%;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 1px 60px rgba(0, 0, 0, 0.32), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.Inp{
+  margin: 0.5rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: cornflowerblue;
+  width: 50%;
+}
+
+.InpDept{
+  display: block;
+  margin: 0.5rem;
+  border: 1.6px solid cornflowerblue;
+  width: 50%;
+}
+
+.InpClass{
+  margin: 0.5rem;
+  border: 1.6px solid cornflowerblue;
+  width: 50%;
+}
+
+.Inp:focus,
+.InpDept:focus,
+.InpClass:focus{
+  outline: none;
+}
+
+.InvalidInput{
+  width: 15px;
+}
+
+@media screen and (max-width: 650px) {
+  .SignCard{
+    margin: 8% 10%;
+    padding: 0.3rem;
+  }
+}
