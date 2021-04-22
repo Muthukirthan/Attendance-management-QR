@@ -1,0 +1,8 @@
+.AddFieldOptions,
+.NewSubj,
+.NewClass,
+.NewDept{
+    text-align: center;
+    padding: 1rem;
+    color: cornflowerblue;
+}

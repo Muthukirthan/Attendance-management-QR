@@ -51,23 +51,32 @@
 }
 
 .GenerateContainer,
-.DownloadContainer{
-    border-radius: 5px;
+.DownloadContainer,
+.AddFieldContainer,
+.NewSubjContainer,
+.NewClassContainer,
+.NewDeptContainer{
     border: solid cornflowerblue;
     color: cornflowerblue;
     padding: 0.3rem;
 }
 
 .GenerateContainerSelected,
-.DownloadContainerSelected{
-    border-radius: 5px;
+.DownloadContainerSelected,
+.AddFieldContainerSelected,
+.NewSubjContainerSelected,
+.NewClassContainerSelected,
+.NewDeptContainerSelected{
     border: solid cornflowerblue;
     color: white;
     padding: 0.3rem;
     background-color: cornflowerblue;
 }
 
-.Attendance{
+.Attendance,
+.NewDeptButton,
+.NewClassButton,
+.NewSubjButton{
     border-radius: 5px;
     border: solid cornflowerblue;
     color: cornflowerblue;
@@ -80,7 +89,10 @@
 .GenerateButton:hover,
 .Attendance:hover,
 .Attendance:focus,
-.DownloadAttendance:hover{
+.DownloadAttendance:hover,
+.NewDeptButton:hover,
+.NewClassButton:hover,
+.NewSubjButton:hover{
     outline: none;
     background-color: cornflowerblue;
     color: white;
