@@ -1,23 +1,28 @@
-.Generate{
+.DtabSheet{
     color: cornflowerblue;
     text-align: center;
 }
 
-.GenerateMsg{
+.DtabMsg{
     text-align: center;
 }
 
-.GenerateTable{
+.DtabTable{
     margin-left: auto;
     margin-right: auto;
 }
 
-.InpSelect{
+.DtabDate{
+    border: 1.6px solid cornflowerblue;
+    border-radius: 6px;
+}
+
+.DtabInpSelect{
     border: 1.6px solid cornflowerblue;
     width: 200px;
     border-radius: 6px;
 }
 
-.InpSelect:focus{
+.DtabInpSelect:focus{
     outline: none;
 }

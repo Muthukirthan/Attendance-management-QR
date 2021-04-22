@@ -40,6 +40,33 @@
     margin-left: auto;
 }
 
+.DownloadAttendance{
+    border-radius: 5px;
+    border: solid cornflowerblue;
+    color: cornflowerblue;
+    padding: 0.3rem;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.GenerateContainer,
+.DownloadContainer{
+    border-radius: 5px;
+    border: solid cornflowerblue;
+    color: cornflowerblue;
+    padding: 0.3rem;
+}
+
+.GenerateContainerSelected,
+.DownloadContainerSelected{
+    border-radius: 5px;
+    border: solid cornflowerblue;
+    color: white;
+    padding: 0.3rem;
+    background-color: cornflowerblue;
+}
+
 .Attendance{
     border-radius: 5px;
     border: solid cornflowerblue;
@@ -52,7 +79,8 @@
 .GenerateButton:focus,
 .GenerateButton:hover,
 .Attendance:hover,
-.Attendance:focus{
+.Attendance:focus,
+.DownloadAttendance:hover{
     outline: none;
     background-color: cornflowerblue;
     color: white;
