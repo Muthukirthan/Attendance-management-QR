@@ -40,9 +40,7 @@ class Attendance extends Component{
         }
         axios.post(`${url}/postKey`,data).then(
             response => {
-                let new_sheet = this.state.sheet
-                new_sheet.push(response.data)
-                this.setState({sheet: new_sheet})
+                this.setState({sheet: response['data']['sheet']})
             })
     }
 

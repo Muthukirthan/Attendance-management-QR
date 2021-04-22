@@ -141,7 +141,7 @@ class Signup extends Component{
                 </div>
                 <div style={{textAlign: "center", color:"cornflowerblue"}}>
                     <h4>Already signed in ?</h4>
-                    <a href="https://qrcodescan.in/" target="_blank" rel="noopener noreferrer" style={{color:"cornflowerblue",fontSize: "large"}}>
+                    <a href="https://www.the-qrcode-generator.com/scan" target="_blank" rel="noopener noreferrer" style={{color:"cornflowerblue",fontSize: "large"}}>
                         Get your attendance today
                     </a>
                 </div>

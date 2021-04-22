@@ -4,9 +4,10 @@ import {BrowserRouter} from 'react-router-dom'
 import {Route} from 'react-router-dom'
 import Signup from '../../components/Signup'
 import Registered from '../../components/Registered'
-import Generate from '../../components/Generate'
+import FacultyDashboard from '../../components/FacultyDashboard'
 import Attendance from '../../components/Attendance'
 import logo from '../../assets/qr.jpg'
+
 const app = () => {
   console.log('[App] rendered')
   return (
@@ -17,7 +18,7 @@ const app = () => {
       </div>
       <Route exact path='/' component={Signup} />
       <Route exact path={'/key/:roll_num(\\d+)?'} component={Registered} />
-      <Route exact path='/generate' component={Generate} />
+      <Route exact path='/facultyDashboard' component={FacultyDashboard} />
       <Route exact path='/attendance/:date/:key' component={Attendance} />
     </BrowserRouter>
   )

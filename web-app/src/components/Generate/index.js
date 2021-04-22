@@ -11,15 +11,12 @@ class Generate extends Component{
         qr_url: undefined
     }
     dateObj = new Date()
-    date = `${this.dateObj.getFullYear()}-${this.dateObj.getMonth()}-${this.dateObj.getDate()}`
+    date = `${this.dateObj.getFullYear()}-${this.dateObj.getMonth()+1 < 10 ? `0${this.dateObj.getMonth()+1}` : `${this.dateObj.getMonth()+1}`}-${this.dateObj.getDate()}`
     class_inp_ele = React.createRef()
     subject_inp_ele = React.createRef()
 
     componentDidMount(){
-        axios.get(`${url}/getGenerateData`).then(
-            response => {
-                this.setState({data: response['data']})
-            })
+        this.setState({data: this.props.data})
     }
 
     subjectSelected = (event) => {
