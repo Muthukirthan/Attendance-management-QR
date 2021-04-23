@@ -112,12 +112,62 @@ class Key(Resource):
 
 class DashboardData(Resource):
     def get(self):
+        response = {
+            'mapSubjClass': {},
+            'allData': {}
+        }
+        sql_cmd = 'select * from class'
+        values = execute_sql_cmd(sql_cmd,False)
+        response['allData']['classes'] = [field[0] for field in values]
+        response['allData']['departments'] = list(set([field[1] for field in values]))
+
         sql_cmd = 'select * from subject'
-        subjects = execute_sql_cmd(sql_cmd,False)
-        response = {}
-        for subject in subjects:
-            response[subject[0]] = subject[1].split(',')
+        values = execute_sql_cmd(sql_cmd,False)
+        response['allData']['subjects'] = [field[0] for field in values]
+        
+        for subject in values:
+            response['mapSubjClass'][subject[0]] = subject[1].split(',')
+        
         return make_response(jsonify(response))
+
+    def post(self):
+        data = request.get_json()
+        dept_name, class_name, subj_name = data['dept_name'], data['class_name'], data['subj_name']
+
+        if dept_name == "":
+            sql_cmd = 'select * from subject'
+            values = execute_sql_cmd(sql_cmd,False)
+            for field in values:
+                # Subject already present
+                if subj_name == field[0]:
+                    classes = field[1].split(',')
+                    # both already present
+                    if class_name in classes:
+                        return make_response(jsonify({"Result": "Subject and class already present"}))
+                    # New class for subject
+                    else:
+                        classes.append(class_name)
+                        classes = ','.join(classes)
+                        sql_cmd = f'update subject set classes="{classes}" where subject_name="{subj_name}"'
+                        execute_sql_cmd(sql_cmd,True)
+                        return make_response(jsonify({"Result": f"Added {class_name} class for {subj_name} successfully"}))
+            # New subject
+            sql_cmd = f'insert into subject values("{subj_name}", "{class_name}")'
+            execute_sql_cmd(sql_cmd,True)
+            return make_response(jsonify({"Result": f"Added {subj_name} successfully"}))
+        
+        elif subj_name == "":
+            sql_cmd = 'select * from class'
+            values = execute_sql_cmd(sql_cmd,False)
+            for field in values:
+                # Class already present
+                if class_name == field[0]:
+                    return make_response(jsonify({"Result": f"{class_name} class already present"}))
+            sql_cmd = f'insert into class values("{class_name}", "{dept_name}")'
+            execute_sql_cmd(sql_cmd,True)
+            return make_response(jsonify({"Result": f"Added {class_name} class in {dept_name} department successfully"}))
+        else:
+            return make_response(jsonify({"Result": "Invalid data"}))
 
 class QRimage(Resource):
     def get(self,date,class_name,subj_name):
@@ -173,7 +223,7 @@ class DownloadAttendanceSheet(Resource):
 api.add_resource(SignUpData,'/getSignUpData')
 api.add_resource(Students,'/getStudents','/postStudent')
 api.add_resource(Key,'/getKey/<int:roll_num>','/postKey')
-api.add_resource(DashboardData,'/getDashboardData')
+api.add_resource(DashboardData,'/dashboardData')
 api.add_resource(QRimage,'/getQRimg/<string:date>/<string:class_name>/<string:subj_name>')
 api.add_resource(Attendance,'/getAttendance/<string:date>/<string:encoded_str>')
 api.add_resource(DownloadAttendanceSheet, '/getSheet/<string:date>/<string:class_name>/<string:subj_name>')
